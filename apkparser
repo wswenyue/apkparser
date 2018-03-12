@@ -1,0 +1,18 @@
+#!/bin/bash
+# Author: wswenyue.
+#Date & Time: 2018-03-12 12:58:52
+#Description: a bash script
+APK_PARSER_DIR=`pwd`
+
+has(){
+    type "$1" > /dev/null 2>&1
+}
+
+
+if has "java"; then
+	java -jar ${APK_PARSER_DIR}/ApkParser.jar $@
+else
+	echo >&2 "Failed to execute, please insatll java before."
+fi
+
+ 
